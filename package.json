@@ -1,0 +1,13 @@
+{
+  "name": "gun-shooter-dev",
+  "private": true,
+  "description": "개발용 검증 도구만 정의합니다. 게임(docs/)은 빌드나 npm 없이 실행됩니다.",
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "test:browser": "playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.65.0"
+  }
+}
