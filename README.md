@@ -44,7 +44,7 @@ python3 -m http.server 8000
 
 ## 테스트
 
-Node.js 22 이상에서 저장소 루트에서 실행합니다. 의존성 설치가 필요 없습니다.
+Node.js 22 이상에서 저장소 루트에서 실행합니다. 의존성 설치가 필요 없습니다(`npm ci`를 하지 않아도 됩니다).
 
 ```sh
 node --test
@@ -54,9 +54,38 @@ node --test
 
 ## 브라우저 검증
 
-`node --test`는 규칙 모듈만 검사합니다. 렌더링·Pointer Lock·마우스 조준·파티클·효과음·실제 60초 진행은 사람이 데스크톱 브라우저에서 직접 확인해야 합니다. 절차와 빈 기록 양식은 [`tests/browser-verification.md`](tests/browser-verification.md)에 있습니다.
+브라우저 동작은 두 방법으로 확인합니다. 자동 검증이 렌더링·입력·시간 흐름을 확인하고, 사람은 효과음 청취와 실제 마우스 조작감만 확인합니다.
+
+### 자동 브라우저 검증(Playwright)
+
+Playwright는 개발용 검증 도구입니다. 게임 실행·배포(`docs/`)에는 npm이나 빌드가 필요하지 않습니다. `node --test`는 Playwright를 설치하지 않아도 그대로 동작하고 브라우저 테스트(`tests/browser/*.spec.mjs`)를 찾지 않습니다.
+
+사전 조건: Node.js 22 이상, Python 3, 인터넷 연결(브라우저 설치와 CDN Three.js 로드).
+
+```sh
+# 저장소 루트에서
+npm ci                            # @playwright/test 1.65.0 (package-lock.json 고정)
+npx playwright install chromium   # 사용자 캐시(~/.cache/ms-playwright)에 Chromium 설치
+npm run test:browser              # 정적 서버를 띄우고 3개 시나리오를 실행
+```
+
+- 설정은 [`playwright.config.mjs`](playwright.config.mjs)에 있습니다. `python3 -m http.server 8123`으로 저장소 루트를 제공하고 `/docs/index.html`을 엽니다. 포트가 사용 중이면 `GUN_SHOOTER_PORT=8130 npm run test:browser`처럼 바꿉니다.
+- 브라우저는 전체 Chromium의 헤드리스 모드(`channel: 'chromium'`)이며 WebGL은 `--use-angle=swiftshader --enable-unsafe-swiftshader`(CPU 렌더링)로 실행합니다. worker 1개, viewport 960×600, 자동 재시도 없음입니다.
+- 실행 시간은 약 2분입니다. 03 시나리오가 실제 60초 라운드를 기다립니다.
+- 시나리오(`tests/browser/game.spec.mjs`):
+  - `01-play-hit-miss-reload`: 초기 WebGL 장면·총기·시작 안내, 실제 Pointer Lock, 마우스 조준에 따른 화면 변화, 보이는 표적 명중(+100점, 1발), 빗나감(점수 불변), 12발 소진·빈 탄창 클릭 차단, `R` 재장전 표시·재장전 중 클릭 차단·1.4초 뒤 12발 복구와 다음 발사.
+  - `02-pause-resume-restart`: 일시 정지와 시간 정지, 계속하기, 명중 후·재장전 중 일시 정지 화면의 다시 시작, 두 번 다시 시작한 뒤 첫 클릭이 한 발만 소모.
+  - `03-full-round`: 타이머를 건드리지 않은 실제 60초 종료, 최종 점수, 종료 후 클릭·`R`·마우스 이동 차단, 종료 화면의 다시 시작.
+- 모든 시나리오는 `console` 오류·경고, `pageerror`, 실패한 요청, HTTP 400 이상 응답, `https://cdn.jsdelivr.net/npm/three@0.170.0/` 밖의 외부 요청이 하나라도 있으면 실패합니다.
+
+산출물: 시나리오마다 `test-results/evidence/<시나리오>/`에 `log.json`(기준 SHA·작업 트리 변경·`docs/` diff 해시, 환경·브라우저 버전·실행 인자, 단계별 단조 시각과 HUD·패널 텍스트, 콘솔·요청 기록)과 JPEG 스크린샷이 생깁니다. 실패하면 `test-results/artifacts/`에 실패 화면과 오류 위치가 남습니다. 두 폴더는 `.gitignore`로 제외됩니다. 검토용 대표 실행은 `EVIDENCE_DIR=tests/browser/evidence npm run test:browser`로 저장소에 남깁니다.
+
+자동 검증이 인정하는 근거와 한계, 실패 진단은 [`tests/browser-verification.md`](tests/browser-verification.md)의 0장에 있습니다.
+
+### 사람의 확인
+
+자동 검증으로 대신할 수 없는 항목은 효과음 청취와 실제 마우스 조작감입니다. [`tests/browser-verification.md`](tests/browser-verification.md)의 4장 양식으로 확인합니다. 자동 검증이 실패하거나 다른 브라우저에서 재현해야 할 때는 같은 문서 3장의 수동 절차를 사용합니다.
 
 - 검증 전에 대상 SHA(`git rev-parse HEAD`), 작업 트리 변경(`git status --short`), OS, 브라우저 전체 버전, 실행 일시, 서버 명령과 URL을 기록합니다.
 - 서버는 저장소 루트에서 `python3 -m http.server 8000`으로 실행하고 <http://localhost:8000/docs/index.html>에 접속합니다.
-- 확인 범위: 초기 3D 렌더링, Console·Network 기록, Pointer Lock과 조준, 명중·파티클·점수, 12발 소진과 `R` 재장전, 재장전 중 표적 재등장, `Esc` 정지·재개, 게임 도중 일시 정지 화면에서 다시 시작(잠금 거부 후 재시도·계속하기, 반복 재시작 포함), 실제 60초 종료와 종료 경계의 `R`·`Esc`, 종료 후 두 차례 이상 다시 시작, 효과음과 조준 감각.
 - 기록 사본은 저장소 작업 트리 밖에 만들어 증거와 함께 제출합니다. 기록란이 비어 있거나 증거가 없는 항목은 미실행입니다.

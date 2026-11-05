@@ -1,0 +1,491 @@
+{
+  "scenario": "01-play-hit-miss-reload",
+  "startedAt": "2026-11-05T22:54:27.911Z",
+  "revision": {
+    "head": "c79e5d73315fda89b60181a0a6db3d982d529f59",
+    "statusShort": [
+      "A  .gitignore",
+      " M docs/index.html",
+      "A  package-lock.json",
+      "A  package.json",
+      "AM playwright.config.mjs",
+      "AM tests/browser/game.spec.mjs",
+      "AM tests/browser/helpers.mjs"
+    ],
+    "docsDiffVsHead": "sha256:4cd929b70a0be3cc8ee7e3f1020f7eb5081108877a1eb257ad97d3c1c1d6485d",
+    "docsTreeHash": [
+      "a0c0dbc1e179b2a0c45e14deeaa0b25b6284e0d6",
+      "c5b124287b9573a10e71c7e21e5f69c9513ba98c",
+      "62f7c88d881e68bd9c46972b51d5c2f907161bfa",
+      "625985e09c50fb9f9a1e27ec0a271463f7bc0158"
+    ]
+  },
+  "environment": {
+    "node": "v22.23.4",
+    "platform": "linux arm64",
+    "browser": "chromium 158.0.8127.18",
+    "launchArgs": [
+      "channel=chromium (new headless)",
+      "--headless",
+      "--use-angle=swiftshader",
+      "--enable-unsafe-swiftshader"
+    ],
+    "command": "npm run test:browser"
+  },
+  "steps": [
+    {
+      "t": 6434,
+      "step": "초기 화면",
+      "score": "0",
+      "ammo": "12 / 12",
+      "time": "60.0",
+      "status": "",
+      "reloadBarHidden": true,
+      "panel": "panel-start",
+      "panelText": "표적 사격장 60초 동안 최대한 많은 표적을 맞히세요. 마우스 조준 왼쪽 클릭 발사 (한 번에 한 발) R 재장전 (탄창 12발) Esc 일시 정지 / 다시 시작 시작",
+      "error": null,
+      "pointerLock": null,
+      "webgl": {
+        "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (LLVM 10.0.0) (0x0000C0DE)), SwiftShader driver)"
+      },
+      "skyGroundContrast": 55.15690972222217,
+      "redBlobs": [
+        {
+          "x": 686.0851063829788,
+          "y": 308.8936170212766,
+          "pixels": 47,
+          "w": 24,
+          "h": 20
+        }
+      ],
+      "gunDarkPixels": 19809
+    },
+    {
+      "t": 8028,
+      "step": "#btn-start 클릭 → Pointer Lock 획득",
+      "score": "0",
+      "ammo": "12 / 12",
+      "time": "60.0",
+      "status": "",
+      "reloadBarHidden": true,
+      "panel": null,
+      "panelText": null,
+      "error": null,
+      "pointerLock": "#scene",
+      "attempt": 1
+    },
+    {
+      "t": 8109,
+      "step": "시작 직후",
+      "score": "0",
+      "ammo": "12 / 12",
+      "time": "59.9",
+      "status": "",
+      "reloadBarHidden": true,
+      "panel": null,
+      "panelText": null,
+      "error": null,
+      "pointerLock": "#scene"
+    },
+    {
+      "t": 9410,
+      "step": "시작 직후 장면",
+      "score": "0",
+      "ammo": "12 / 12",
+      "time": "58.6",
+      "status": "",
+      "reloadBarHidden": true,
+      "panel": null,
+      "panelText": null,
+      "error": null,
+      "pointerLock": "#scene",
+      "gunDarkPixels": 2817,
+      "redBlobs": 5,
+      "visibleStaticSlots": [
+        0,
+        2,
+        5,
+        10
+      ]
+    },
+    {
+      "t": 11509,
+      "step": "마우스 오른쪽 120px 이동 후",
+      "score": "0",
+      "ammo": "12 / 12",
+      "time": "56.4",
+      "status": "",
+      "reloadBarHidden": true,
+      "panel": null,
+      "panelText": null,
+      "error": null,
+      "pointerLock": "#scene",
+      "sceneDiff": 7.027273148148164,
+      "before": [
+        {
+          "x": 480.54545454545456,
+          "y": 294.72727272727275,
+          "pixels": 11,
+          "w": 12,
+          "h": 12
+        },
+        {
+          "x": 580.8181818181819,
+          "y": 304.27272727272725,
+          "pixels": 88,
+          "w": 40,
+          "h": 24
+        },
+        {
+          "x": 273.86516853932585,
+          "y": 307.4831460674157,
+          "pixels": 89,
+          "w": 28,
+          "h": 24
+        },
+        {
+          "x": 411.4117647058824,
+          "y": 304.8235294117647,
+          "pixels": 17,
+          "w": 16,
+          "h": 12
+        },
+        {
+          "x": 659.8461538461538,
+          "y": 309.3076923076923,
+          "pixels": 52,
+          "w": 24,
+          "h": 20
+        }
+      ],
+      "after": [
+        {
+          "x": 369.38461538461536,
+          "y": 294.61538461538464,
+          "pixels": 13,
+          "w": 12,
+          "h": 12
+        },
+        {
+          "x": 112.14193548387097,
+          "y": 308.7096774193548,
+          "pixels": 155,
+          "w": 40,
+          "h": 32
+        },
+        {
+          "x": 468.97297297297297,
+          "y": 303.8918918918919,
+          "pixels": 74,
+          "w": 40,
+          "h": 24
+        },
+        {
+          "x": 292.1666666666667,
+          "y": 305.6666666666667,
+          "pixels": 24,
+          "w": 16,
+          "h": 12
+        },
+        {
+          "x": 555.6,
+          "y": 308.2,
+          "pixels": 40,
+          "w": 20,
+          "h": 20
+        }
+      ]
+    },
+    {
+      "t": 13427,
+      "step": "aim: 정면 시점에서 보이는 정지 표적",
+      "visible": [
+        {
+          "slot": 0,
+          "screen": {
+            "x": 274,
+            "y": 307,
+            "r": 17.2
+          }
+        },
+        {
+          "slot": 2,
+          "screen": {
+            "x": 575,
+            "y": 303,
+            "r": 15.9
+          }
+        },
+        {
+          "slot": 5,
+          "screen": {
+            "x": 411,
+            "y": 306,
+            "r": 9.8
+          }
+        },
+        {
+          "slot": 10,
+          "screen": {
+            "x": 480,
+            "y": 294,
+            "r": 6.9
+          }
+        }
+      ]
+    },
+    {
+      "t": 14926,
+      "step": "aim: 조준 후 화면 중앙 관측",
+      "slot": 0,
+      "yawRad": 0.4636476090008061,
+      "pitchRad": -0.014906015766106059,
+      "centeredBlob": {
+        "x": 480.6666666666667,
+        "y": 300.6666666666667,
+        "pixels": 54,
+        "w": 24,
+        "h": 24
+      }
+    },
+    {
+      "t": 15924,
+      "step": "표적 사격 시도 1",
+      "score": "100",
+      "ammo": "11 / 12",
+      "time": "52.0",
+      "status": "",
+      "reloadBarHidden": true,
+      "panel": null,
+      "panelText": null,
+      "error": null,
+      "pointerLock": "#scene",
+      "target": {
+        "slot": 0,
+        "x": -6,
+        "z": -12,
+        "y": 1.4,
+        "screen": {
+          "x": 274,
+          "y": 307,
+          "r": 17.2
+        },
+        "blob": {
+          "x": 273.86516853932585,
+          "y": 307.4831460674157,
+          "pixels": 89,
+          "w": 28,
+          "h": 24
+        }
+      },
+      "centeredBeforeShot": true,
+      "scoreDelta": 100
+    },
+    {
+      "t": 17434,
+      "step": "명중 뒤 장면",
+      "score": "100",
+      "ammo": "11 / 12",
+      "time": "50.5",
+      "status": "",
+      "reloadBarHidden": true,
+      "panel": null,
+      "panelText": null,
+      "error": null,
+      "pointerLock": "#scene",
+      "redBlobs": [
+        {
+          "x": 687.1111111111111,
+          "y": 288.44444444444446,
+          "pixels": 18,
+          "w": 16,
+          "h": 16
+        },
+        {
+          "x": 925.6862745098039,
+          "y": 289.921568627451,
+          "pixels": 51,
+          "w": 28,
+          "h": 20
+        },
+        {
+          "x": 829.7011494252873,
+          "y": 298.7586206896552,
+          "pixels": 174,
+          "w": 60,
+          "h": 28
+        },
+        {
+          "x": 607.6,
+          "y": 298.6,
+          "pixels": 20,
+          "w": 16,
+          "h": 12
+        }
+      ]
+    },
+    {
+      "t": 18312,
+      "step": "하늘 사격(빗나감)",
+      "score": "100",
+      "ammo": "10 / 12",
+      "time": "49.7",
+      "status": "",
+      "reloadBarHidden": true,
+      "panel": null,
+      "panelText": null,
+      "error": null,
+      "pointerLock": "#scene"
+    },
+    {
+      "t": 21313,
+      "step": "탄창 소진",
+      "score": "100",
+      "ammo": "0 / 12",
+      "time": "46.7",
+      "status": "R 키로 재장전",
+      "reloadBarHidden": true,
+      "panel": null,
+      "panelText": null,
+      "error": null,
+      "pointerLock": "#scene",
+      "shots": 12
+    },
+    {
+      "t": 21614,
+      "step": "빈 탄창 클릭",
+      "score": "100",
+      "ammo": "0 / 12",
+      "time": "46.3",
+      "status": "탄창이 비었습니다 — R 재장전",
+      "reloadBarHidden": true,
+      "panel": null,
+      "panelText": null,
+      "error": null,
+      "pointerLock": "#scene"
+    },
+    {
+      "t": 21807,
+      "step": "R 직후",
+      "score": "100",
+      "ammo": "0 / 12",
+      "time": "46.2",
+      "status": "재장전 중…",
+      "reloadBarHidden": false,
+      "panel": null,
+      "panelText": null,
+      "error": null,
+      "pointerLock": "#scene"
+    },
+    {
+      "t": 22311,
+      "step": "재장전 중 클릭",
+      "score": "100",
+      "ammo": "0 / 12",
+      "time": "45.6",
+      "status": "재장전 중…",
+      "reloadBarHidden": false,
+      "panel": null,
+      "panelText": null,
+      "error": null,
+      "pointerLock": "#scene"
+    },
+    {
+      "t": 23113,
+      "step": "재장전 완료 관측",
+      "score": "100",
+      "ammo": "12 / 12",
+      "time": "44.9",
+      "status": "",
+      "reloadBarHidden": true,
+      "panel": null,
+      "panelText": null,
+      "error": null,
+      "pointerLock": "#scene",
+      "msSinceR": 1495
+    },
+    {
+      "t": 23711,
+      "step": "재장전 후 첫 발사",
+      "score": "100",
+      "ammo": "11 / 12",
+      "time": "44.2",
+      "status": "",
+      "reloadBarHidden": true,
+      "panel": null,
+      "panelText": null,
+      "error": null,
+      "pointerLock": "#scene"
+    },
+    {
+      "t": 23712,
+      "step": "이 시나리오는 라운드 종료(60초)를 기다리지 않는다. 03 시나리오에서 별도 검증."
+    }
+  ],
+  "console": [],
+  "pageErrors": [],
+  "requests": [
+    {
+      "t": 36,
+      "method": "GET",
+      "url": "http://127.0.0.1:8123/docs/index.html"
+    },
+    {
+      "t": 100,
+      "method": "GET",
+      "url": "http://127.0.0.1:8123/docs/styles.css"
+    },
+    {
+      "t": 100,
+      "method": "GET",
+      "url": "http://127.0.0.1:8123/docs/js/game.mjs"
+    },
+    {
+      "t": 113,
+      "method": "GET",
+      "url": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js"
+    },
+    {
+      "t": 113,
+      "method": "GET",
+      "url": "http://127.0.0.1:8123/docs/js/rules.mjs"
+    }
+  ],
+  "failedRequests": [],
+  "httpErrors": [],
+  "screenshots": [
+    {
+      "t": 6931,
+      "file": "01-initial.jpg",
+      "label": "initial"
+    },
+    {
+      "t": 9901,
+      "file": "02-started.jpg",
+      "label": "started"
+    },
+    {
+      "t": 15520,
+      "file": "03-aimed-1.jpg",
+      "label": "aimed-1"
+    },
+    {
+      "t": 16616,
+      "file": "04-hit.jpg",
+      "label": "hit"
+    },
+    {
+      "t": 22100,
+      "file": "05-reloading.jpg",
+      "label": "reloading"
+    },
+    {
+      "t": 23340,
+      "file": "06-reloaded.jpg",
+      "label": "reloaded"
+    }
+  ],
+  "result": "passed",
+  "finishedAt": "2026-11-05T22:54:51.624Z"
+}

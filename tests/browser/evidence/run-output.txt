@@ -1,0 +1,16 @@
+$ git rev-parse HEAD
+c79e5d73315fda89b60181a0a6db3d982d529f59
+$ EVIDENCE_DIR=tests/browser/evidence npm run test:browser
+
+> test:browser
+> playwright test
+
+
+Running 3 tests using 1 worker
+
+  ✓  1 tests/browser/game.spec.mjs:75:1 › 01-play-hit-miss-reload: 초기 렌더링, 조준·명중·빗나감, 탄창 소진과 R 재장전 (24.3s)
+  ✓  2 tests/browser/game.spec.mjs:193:1 › 02-pause-resume-restart: 일시 정지·시간 정지·계속하기·게임 도중 다시 시작 (23.5s)
+  ✓  3 tests/browser/game.spec.mjs:291:1 › 03-full-round: 실제 60초 라운드 종료, 종료 후 입력 차단, 다시 시작 (1.1m)
+
+  3 passed (2.0m)
+exit=0
