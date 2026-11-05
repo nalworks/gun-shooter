@@ -65,6 +65,7 @@ const ui = {
   btnStart: $('btn-start'),
   btnResume: $('btn-resume'),
   btnRestart: $('btn-restart'),
+  btnPauseRestart: $('btn-pause-restart'),
 };
 
 const state = createGame({ slotCount: SLOTS.length });
@@ -533,7 +534,14 @@ function isLocked() {
   return document.pointerLockElement === ui.canvas;
 }
 
+/**
+ * 버튼 클릭에서 Pointer Lock을 요청한다. 라운드 상태는 잠금 획득(pointerlockchange) 뒤에만 바꾼다.
+ * 이미 잠겨 있거나 앞선 요청의 결과를 기다리는 중이면 새 요청을 무시한다.
+ * 따라서 중복 클릭이 pendingAction을 덮어쓰거나 초기화를 두 번 실행하지 않는다.
+ * @param {'start' | 'resume'} action
+ */
 function requestLock(action) {
+  if (isLocked() || pendingAction !== null) return;
   hideError();
   sfx.unlock();
   if (!ui.canvas.requestPointerLock) {
@@ -564,14 +572,7 @@ document.addEventListener('pointerlockchange', () => {
     const action = pendingAction;
     pendingAction = null;
     if (action === 'start') {
-      startRound(state, now);
-      yaw = 0;
-      pitch = 0;
-      fx.recoil = 0;
-      for (const impact of impacts) impact.mesh.visible = false;
-      clearParticles();
-      roundFinished = false;
-      syncAllTargets();
+      beginNewRound(now);
     } else if (action === 'resume') {
       resume(state, now);
     }
@@ -590,6 +591,7 @@ document.addEventListener('pointerlockchange', () => {
 
 ui.btnStart.addEventListener('click', () => requestLock('start'));
 ui.btnRestart.addEventListener('click', () => requestLock('start'));
+ui.btnPauseRestart.addEventListener('click', () => requestLock('start'));
 ui.btnResume.addEventListener('click', () => requestLock('resume'));
 
 document.addEventListener('mousemove', (event) => {
@@ -710,6 +712,28 @@ function hideError() {
 }
 
 let roundFinished = false;
+
+/**
+ * 시작·종료 후 다시 시작·일시 정지 중 다시 시작이 공유하는 새 라운드 초기화.
+ * Pointer Lock을 얻은 뒤 한 번만 호출한다. 규칙 상태(점수·탄약·시간·재장전·발사 간격·표적 재등장)는
+ * startRound가 초기화하고, 여기서는 이전 라운드의 시점과 일시적 화면 효과를 지운다.
+ * 게임 도중 다시 시작하면 반동·섬광·명중 표시·파티클이 진행 중일 수 있으므로 모두 정리한다.
+ */
+function beginNewRound(now) {
+  startRound(state, now);
+  yaw = 0;
+  pitch = 0;
+  fx.recoil = 0;
+  fx.flashUntil = 0;
+  clearTimeout(fx.hitmarkerTimer);
+  ui.hitmarker.classList.remove('show');
+  for (const impact of impacts) impact.mesh.visible = false;
+  clearParticles();
+  statusText = '';
+  statusUntil = 0;
+  roundFinished = false;
+  syncAllTargets();
+}
 
 /**
  * 시간을 진행한 모든 경로(프레임·발사·재장전·일시 정지) 뒤에 호출한다.

@@ -285,6 +285,88 @@ test('다시 시작하면 점수·탄약·시간·표적·재장전 상태가 �
   assert.equal(state.round, 4);
 });
 
+test('일시 정지 중 다시 시작하면 남아 있던 명중·탄약·재장전·재등장 대기가 새 라운드에 영향을 주지 않는다', () => {
+  const { magazineSize, reloadMs, respawnDelayMs, roundMs, pointsPerHit } = DEFAULT_CONFIG;
+  const state = running();
+  // 0번 표적 명중(재등장 대기), 두 발 빗나감, 재장전 시작 직후 일시 정지한다.
+  assert.equal(fire(state, T0 + 10, [{ distance: 9, targetId: 0 }]).hit, true);
+  shootMany(state, 2, T0 + 10 + GAP);
+  assert.equal(startReload(state, T0 + 300).started, true);
+  assert.equal(pause(state, T0 + 400), true);
+  assert.equal(state.phase, PHASE.PAUSED);
+  assert.equal(state.score, pointsPerHit);
+  assert.equal(state.ammo, magazineSize - 3);
+  assert.equal(isReloading(state), true);
+  assert.equal(state.targets[0].alive, false);
+  assert.notEqual(state.targets[0].respawnAt, null);
+  const oldReloadEndsAt = state.reloadEndsAt; // 게임 시간 1700ms
+  const oldRespawnAt = state.targets[0].respawnAt; // 게임 시간 710ms
+  assert.ok(oldReloadEndsAt > 0 && oldRespawnAt > 0);
+
+  // 일시 정지 화면에서 한참 뒤에 다시 시작한다.
+  const now = T0 + 30_000;
+  startRound(state, now);
+  assert.equal(state.phase, PHASE.RUNNING);
+  assert.equal(state.score, 0);
+  assert.equal(state.shots, 0);
+  assert.equal(state.hits, 0);
+  assert.equal(state.ammo, magazineSize);
+  assert.equal(isReloading(state), false);
+  assert.equal(reloadProgress(state), null);
+  assert.equal(remainingMs(state), roundMs);
+  assert.equal(gameClockMs(state), 0);
+  assert.ok(state.targets.every((x) => x.alive && x.respawnAt === null && x.spawnCount === 1));
+  assert.equal(new Set(state.targets.map((x) => x.slot)).size, DEFAULT_CONFIG.targetCount);
+
+  // 첫 발은 발사 간격 제한 없이 시작 시각에 바로 처리되고 한 발만 소모한다.
+  const first = fire(state, now, []);
+  assert.equal(first.fired, true);
+  assert.equal(state.ammo, magazineSize - 1);
+  assert.equal(state.shots, 1);
+
+  // 이전 라운드의 재등장·재장전 예약 시각이 지나도 아무 일도 일어나지 않는다.
+  const atRespawn = tick(state, now + oldRespawnAt);
+  assert.deepEqual(atRespawn.respawned, []);
+  const atReload = tick(state, now + oldReloadEndsAt);
+  assert.equal(atReload.reloaded, false);
+  assert.equal(state.ammo, magazineSize - 1);
+  assert.ok(state.targets.every((x) => x.spawnCount === 1));
+  // 시간은 새 라운드 시작 시각부터 흐른다(정지 이전 경과 시간이 이어지지 않는다).
+  assert.equal(remainingMs(state), roundMs - oldReloadEndsAt);
+
+  // 새 라운드의 명중과 재장전은 정상 동작한다.
+  assert.equal(fire(state, now + oldReloadEndsAt + 1, [{ distance: 9, targetId: 0 }]).hit, true);
+  assert.equal(state.score, pointsPerHit);
+  assert.equal(state.targets[0].respawnAt, oldReloadEndsAt + 1 + respawnDelayMs);
+  assert.equal(startReload(state, now + 2000).started, true);
+  assert.equal(tick(state, now + 2000 + reloadMs).reloaded, true);
+  assert.equal(state.ammo, magazineSize);
+  // 새 라운드도 시작 시각부터 60초 뒤에 끝난다.
+  tick(state, now + roundMs - 1);
+  assert.equal(state.phase, PHASE.RUNNING);
+  tick(state, now + roundMs);
+  assert.equal(state.phase, PHASE.ENDED);
+});
+
+test('일시 정지 중 다시 시작을 여러 번 반복해도 매번 같은 초기 상태와 첫 발 소모를 보인다', () => {
+  const state = running();
+  let now = T0;
+  for (let round = 0; round < 3; round += 1) {
+    shootMany(state, 4, now + GAP, [{ distance: 9, targetId: round }]);
+    startReload(state, now + 1000);
+    assert.equal(pause(state, now + 1100), true);
+    now += 5_000;
+    startRound(state, now);
+    assert.equal(state.score, 0);
+    assert.equal(state.ammo, DEFAULT_CONFIG.magazineSize);
+    assert.equal(isReloading(state), false);
+    assert.equal(remainingMs(state), DEFAULT_CONFIG.roundMs);
+    assert.equal(fire(state, now, []).fired, true);
+    assert.equal(state.ammo, DEFAULT_CONFIG.magazineSize - 1);
+  }
+  assert.equal(state.round, 4);
+});
+
 test('표적 수가 자리 수보다 많으면 설정 오류다', () => {
   assert.throws(() => createGame({ targetCount: 5, slotCount: 4 }), RangeError);
 });

@@ -26,6 +26,12 @@ html, body {
   font-variant-numeric: tabular-nums;
   font-size: 26px; font-weight: 700;
 }
+.hud-hint {
+  flex: 0 1 auto; margin: 0; padding: 4px 10px; align-self: center;
+  border-radius: 6px; background: rgba(10, 14, 20, 0.45);
+  font-size: 13px; text-align: center; text-shadow: 0 1px 2px #000;
+}
+.hud-hint kbd { min-width: 0; margin-right: 4px; font-size: 12px; }
 .hud-box .label { display: block; font-size: 12px; font-weight: 500; opacity: 0.7; }
 .hud-box.low { color: #ff6b5a; }
 .status {
@@ -58,6 +64,8 @@ html, body {
 #overlay {
   position: fixed; inset: 0;
   display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px;
+  justify-content: safe center; /* 낮은 화면에서 넘친 패널의 위쪽이 잘리지 않게 한다. */
+  padding: 16px; overflow-y: auto;
   background: rgba(8, 10, 14, 0.55);
 }
 #overlay[hidden] { display: none; }
@@ -80,6 +88,14 @@ button {
   color: #10141a; background: #ffd34d; border: 0; border-radius: 8px; cursor: pointer;
 }
 button:hover, button:focus-visible { background: #ffe080; outline: 2px solid #fff; }
+.actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 8px; }
+.actions button { margin-top: 0; }
+button.secondary {
+  color: #f2f4f7; background: transparent;
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.55);
+}
+button.secondary:hover, button.secondary:focus-visible { background: rgba(255, 255, 255, 0.14); }
+.note { margin: 12px 0 0; font-size: 14px; opacity: 0.75; }
 .final { font-size: 20px; }
 .final strong { font-size: 36px; display: block; }
 .detail { opacity: 0.75; }
@@ -88,3 +104,12 @@ button:hover, button:focus-visible { background: #ffe080; outline: 2px solid #ff
   background: rgba(160, 30, 20, 0.85); text-align: center;
 }
 .error[hidden] { display: none; }
+
+/* 작은 데스크톱 화면: HUD 상자와 패널 여백을 줄여 안내와 버튼이 겹치지 않게 한다. */
+@media (max-width: 640px), (max-height: 560px) {
+  .hud-top, .hud-bottom { padding: 10px 12px; gap: 8px; }
+  .hud-box { min-width: 0; padding: 4px 10px; font-size: 20px; }
+  .hud-hint { font-size: 12px; padding: 3px 8px; }
+  .panel { padding: 16px 20px; }
+  .controls { margin: 10px 0; line-height: 1.6; }
+}
