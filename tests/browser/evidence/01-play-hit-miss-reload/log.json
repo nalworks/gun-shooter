@@ -1,0 +1,852 @@
+{
+  "scenario": "01-play-hit-miss-reload",
+  "startedAt": "2026-11-05T23:04:06.176Z",
+  "revision": {
+    "head": "2350cf49a5440065b47339a7813e90ed8f1fa73d",
+    "statusShort": [
+      "D tests/browser/evidence/01-play-hit-miss-reload/01-initial.jpg",
+      " D tests/browser/evidence/01-play-hit-miss-reload/02-started.jpg",
+      " D tests/browser/evidence/01-play-hit-miss-reload/03-aimed-1.jpg",
+      " D tests/browser/evidence/01-play-hit-miss-reload/04-hit.jpg",
+      " D tests/browser/evidence/01-play-hit-miss-reload/05-reloading.jpg",
+      " D tests/browser/evidence/01-play-hit-miss-reload/06-reloaded.jpg",
+      " D tests/browser/evidence/01-play-hit-miss-reload/log.json",
+      " D tests/browser/evidence/02-pause-resume-restart/01-paused.jpg",
+      " D tests/browser/evidence/02-pause-resume-restart/02-restart-after-hit.jpg",
+      " D tests/browser/evidence/02-pause-resume-restart/03-paused-during-reload.jpg",
+      " D tests/browser/evidence/02-pause-resume-restart/04-restart-during-reload.jpg",
+      " D tests/browser/evidence/02-pause-resume-restart/log.json",
+      " D tests/browser/evidence/03-full-round/01-ended.jpg",
+      " D tests/browser/evidence/03-full-round/02-restarted.jpg",
+      " D tests/browser/evidence/03-full-round/log.json",
+      " M tests/browser/game.spec.mjs",
+      " M tests/browser/helpers.mjs"
+    ],
+    "docsDiffVsHead": "none",
+    "docsTreeHash": [
+      "a0c0dbc1e179b2a0c45e14deeaa0b25b6284e0d6",
+      "c5b124287b9573a10e71c7e21e5f69c9513ba98c",
+      "62f7c88d881e68bd9c46972b51d5c2f907161bfa",
+      "625985e09c50fb9f9a1e27ec0a271463f7bc0158"
+    ]
+  },
+  "environment": {
+    "node": "v22.23.4",
+    "platform": "linux arm64",
+    "browser": "chromium 158.0.8127.18",
+    "launchArgs": [
+      "channel=chromium (new headless)",
+      "--headless",
+      "--use-angle=swiftshader",
+      "--enable-unsafe-swiftshader"
+    ],
+    "command": "npm run test:browser"
+  },
+  "steps": [
+    {
+      "t": 6527,
+      "step": "초기 화면",
+      "score": "0",
+      "ammo": "12 / 12",
+      "time": "60.0",
+      "status": "",
+      "reloadBarHidden": true,
+      "panel": "panel-start",
+      "panelText": "표적 사격장 60초 동안 최대한 많은 표적을 맞히세요. 마우스 조준 왼쪽 클릭 발사 (한 번에 한 발) R 재장전 (탄창 12발) Esc 일시 정지 / 다시 시작 시작",
+      "error": null,
+      "pointerLock": null,
+      "webgl": {
+        "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (LLVM 10.0.0) (0x0000C0DE)), SwiftShader driver)"
+      },
+      "skyGroundContrast": 55.15317129629625,
+      "redBlobs": [
+        {
+          "x": 311.2,
+          "y": 298.4,
+          "pixels": 10,
+          "w": 8,
+          "h": 16
+        }
+      ],
+      "gunDarkPixels": 19813
+    },
+    {
+      "t": 7818,
+      "step": "#btn-start 클릭 → Pointer Lock 획득",
+      "score": "0",
+      "ammo": "12 / 12",
+      "time": "59.9",
+      "status": "",
+      "reloadBarHidden": true,
+      "panel": null,
+      "panelText": null,
+      "error": null,
+      "pointerLock": "#scene",
+      "attempt": 1
+    },
+    {
+      "t": 7821,
+      "step": "시작 직후",
+      "score": "0",
+      "ammo": "12 / 12",
+      "time": "59.9",
+      "status": "",
+      "reloadBarHidden": true,
+      "panel": null,
+      "panelText": null,
+      "error": null,
+      "pointerLock": "#scene"
+    },
+    {
+      "t": 9129,
+      "step": "시작 직후 장면",
+      "score": "0",
+      "ammo": "12 / 12",
+      "time": "58.5",
+      "status": "",
+      "reloadBarHidden": true,
+      "panel": null,
+      "panelText": null,
+      "error": null,
+      "pointerLock": "#scene",
+      "gunDarkPixels": 2817,
+      "redBlobs": 6,
+      "visibleStaticSlots": [
+        0,
+        4,
+        5,
+        10,
+        11
+      ]
+    },
+    {
+      "t": 11227,
+      "step": "마우스 오른쪽 120px 이동 후",
+      "score": "0",
+      "ammo": "12 / 12",
+      "time": "56.4",
+      "status": "",
+      "reloadBarHidden": true,
+      "panel": null,
+      "panelText": null,
+      "error": null,
+      "pointerLock": "#scene",
+      "sceneDiff": 6.932444444444458,
+      "before": [
+        {
+          "x": 480.54545454545456,
+          "y": 294.72727272727275,
+          "pixels": 11,
+          "w": 12,
+          "h": 12
+        },
+        {
+          "x": 315.77777777777777,
+          "y": 298.5925925925926,
+          "pixels": 27,
+          "w": 16,
+          "h": 16
+        },
+        {
+          "x": 512.7826086956521,
+          "y": 300.95652173913044,
+          "pixels": 23,
+          "w": 16,
+          "h": 16
+        },
+        {
+          "x": 273.86516853932585,
+          "y": 307.4831460674157,
+          "pixels": 89,
+          "w": 28,
+          "h": 24
+        },
+        {
+          "x": 562.7272727272727,
+          "y": 300.54545454545456,
+          "pixels": 11,
+          "w": 12,
+          "h": 12
+        },
+        {
+          "x": 411.4117647058824,
+          "y": 304.8235294117647,
+          "pixels": 17,
+          "w": 16,
+          "h": 12
+        }
+      ],
+      "after": [
+        {
+          "x": 169.90697674418604,
+          "y": 297.90697674418607,
+          "pixels": 43,
+          "w": 20,
+          "h": 20
+        },
+        {
+          "x": 381.02702702702703,
+          "y": 298.64864864864865,
+          "pixels": 37,
+          "w": 32,
+          "h": 20
+        },
+        {
+          "x": 112.14193548387097,
+          "y": 308.7096774193548,
+          "pixels": 155,
+          "w": 40,
+          "h": 32
+        },
+        {
+          "x": 453.6666666666667,
+          "y": 300.6666666666667,
+          "pixels": 12,
+          "w": 12,
+          "h": 12
+        },
+        {
+          "x": 292.1666666666667,
+          "y": 305.6666666666667,
+          "pixels": 24,
+          "w": 16,
+          "h": 12
+        }
+      ]
+    },
+    {
+      "t": 13096,
+      "step": "aim: 정면 시점에서 보이는 정지 표적",
+      "visible": [
+        {
+          "slot": 0,
+          "screen": {
+            "x": 274,
+            "y": 307,
+            "r": 17.2
+          }
+        },
+        {
+          "slot": 4,
+          "screen": {
+            "x": 315,
+            "y": 298,
+            "r": 10.3
+          }
+        },
+        {
+          "slot": 5,
+          "screen": {
+            "x": 411,
+            "y": 306,
+            "r": 9.8
+          }
+        },
+        {
+          "slot": 11,
+          "screen": {
+            "x": 563,
+            "y": 300,
+            "r": 6.9
+          }
+        }
+      ]
+    },
+    {
+      "t": 14540,
+      "step": "aim: 조준 후 화면 중앙 관측",
+      "slot": 0,
+      "yawRad": 0.4636476090008061,
+      "pitchRad": -0.014906015766106059,
+      "centeredBlob": {
+        "x": 480.6666666666667,
+        "y": 300.6666666666667,
+        "pixels": 54,
+        "w": 24,
+        "h": 24
+      }
+    },
+    {
+      "t": 15416,
+      "step": "표적 사격 시도 1",
+      "score": "100",
+      "ammo": "11 / 12",
+      "time": "52.3",
+      "status": "",
+      "reloadBarHidden": true,
+      "panel": null,
+      "panelText": null,
+      "error": null,
+      "pointerLock": "#scene",
+      "target": {
+        "slot": 0,
+        "x": -6,
+        "z": -12,
+        "y": 1.4,
+        "screen": {
+          "x": 274,
+          "y": 307,
+          "r": 17.2
+        },
+        "blob": {
+          "x": 273.86516853932585,
+          "y": 307.4831460674157,
+          "pixels": 89,
+          "w": 28,
+          "h": 24
+        }
+      },
+      "centeredBeforeShot": true,
+      "scoreDelta": 100
+    },
+    {
+      "t": 17033,
+      "step": "명중 뒤 장면",
+      "score": "100",
+      "ammo": "11 / 12",
+      "time": "50.6",
+      "status": "",
+      "reloadBarHidden": true,
+      "panel": null,
+      "panelText": null,
+      "error": null,
+      "pointerLock": "#scene",
+      "redBlobs": [
+        {
+          "x": 703.1320754716982,
+          "y": 292.188679245283,
+          "pixels": 53,
+          "w": 40,
+          "h": 24
+        },
+        {
+          "x": 515.2173913043479,
+          "y": 291.9130434782609,
+          "pixels": 23,
+          "w": 16,
+          "h": 16
+        },
+        {
+          "x": 802,
+          "y": 293.68,
+          "pixels": 25,
+          "w": 20,
+          "h": 12
+        },
+        {
+          "x": 607.6,
+          "y": 298.6,
+          "pixels": 20,
+          "w": 16,
+          "h": 12
+        }
+      ]
+    },
+    {
+      "t": 17878,
+      "step": "하늘 사격(빗나감)",
+      "score": "100",
+      "ammo": "10 / 12",
+      "time": "49.8",
+      "status": "",
+      "reloadBarHidden": true,
+      "panel": null,
+      "panelText": null,
+      "error": null,
+      "pointerLock": "#scene"
+    },
+    {
+      "t": 20918,
+      "step": "탄창 소진",
+      "score": "100",
+      "ammo": "0 / 12",
+      "time": "46.8",
+      "status": "R 키로 재장전",
+      "reloadBarHidden": true,
+      "panel": null,
+      "panelText": null,
+      "error": null,
+      "pointerLock": "#scene",
+      "shots": 12
+    },
+    {
+      "t": 21219,
+      "step": "빈 탄창 클릭",
+      "score": "100",
+      "ammo": "0 / 12",
+      "time": "46.5",
+      "status": "탄창이 비었습니다 — R 재장전",
+      "reloadBarHidden": true,
+      "panel": null,
+      "panelText": null,
+      "error": null,
+      "pointerLock": "#scene"
+    },
+    {
+      "t": 21418,
+      "step": "R 직후(빈 탄창)",
+      "score": "100",
+      "ammo": "0 / 12",
+      "time": "46.3",
+      "status": "재장전 중…",
+      "reloadBarHidden": false,
+      "panel": null,
+      "panelText": null,
+      "error": null,
+      "pointerLock": "#scene"
+    },
+    {
+      "t": 21918,
+      "step": "재장전 중 클릭(빈 탄창)",
+      "score": "100",
+      "ammo": "0 / 12",
+      "time": "45.8",
+      "status": "재장전 중…",
+      "reloadBarHidden": false,
+      "panel": null,
+      "panelText": null,
+      "error": null,
+      "pointerLock": "#scene"
+    },
+    {
+      "t": 22727,
+      "step": "재장전 완료(빈 탄창)",
+      "score": "100",
+      "ammo": "12 / 12",
+      "time": "45.0",
+      "status": "",
+      "reloadBarHidden": true,
+      "panel": null,
+      "panelText": null,
+      "error": null,
+      "pointerLock": "#scene",
+      "observed": {
+        "barShownMs": 91.7,
+        "ammoFullMs": 1408.9,
+        "barHiddenMs": 1408.9,
+        "clicksDuringReloadMs": [
+          502.9
+        ],
+        "ammoChangesDuring": []
+      }
+    },
+    {
+      "t": 23322,
+      "step": "재장전 후 첫 발사",
+      "score": "100",
+      "ammo": "11 / 12",
+      "time": "44.4",
+      "status": "",
+      "reloadBarHidden": true,
+      "panel": null,
+      "panelText": null,
+      "error": null,
+      "pointerLock": "#scene"
+    },
+    {
+      "t": 23486,
+      "step": "R 직후(11발 남음)",
+      "score": "100",
+      "ammo": "11 / 12",
+      "time": "44.2",
+      "status": "재장전 중…",
+      "reloadBarHidden": false,
+      "panel": null,
+      "panelText": null,
+      "error": null,
+      "pointerLock": "#scene"
+    },
+    {
+      "t": 24017,
+      "step": "재장전 중 클릭 2회(11발 남음)",
+      "score": "100",
+      "ammo": "11 / 12",
+      "time": "43.7",
+      "status": "재장전 중…",
+      "reloadBarHidden": false,
+      "panel": null,
+      "panelText": null,
+      "error": null,
+      "pointerLock": "#scene"
+    },
+    {
+      "t": 24826,
+      "step": "재장전 완료(11발 남음)",
+      "score": "100",
+      "ammo": "12 / 12",
+      "time": "42.9",
+      "status": "",
+      "reloadBarHidden": true,
+      "panel": null,
+      "panelText": null,
+      "error": null,
+      "pointerLock": "#scene",
+      "observed": {
+        "barShownMs": 6.2,
+        "ammoFullMs": 1410.7,
+        "barHiddenMs": 1410.7,
+        "clicksDuringReloadMs": [
+          188.2,
+          456.9
+        ],
+        "ammoChangesDuring": []
+      }
+    },
+    {
+      "t": 25122,
+      "step": "부분 재장전 후 첫 발사",
+      "score": "100",
+      "ammo": "11 / 12",
+      "time": "42.5",
+      "status": "",
+      "reloadBarHidden": true,
+      "panel": null,
+      "panelText": null,
+      "error": null,
+      "pointerLock": "#scene"
+    },
+    {
+      "t": 25123,
+      "step": "이 시나리오는 라운드 종료(60초)를 기다리지 않는다. 03 시나리오에서 별도 검증."
+    }
+  ],
+  "console": [],
+  "pageErrors": [],
+  "requests": [
+    {
+      "t": 46,
+      "method": "GET",
+      "url": "http://127.0.0.1:8123/docs/index.html"
+    },
+    {
+      "t": 118,
+      "method": "GET",
+      "url": "http://127.0.0.1:8123/docs/styles.css"
+    },
+    {
+      "t": 118,
+      "method": "GET",
+      "url": "http://127.0.0.1:8123/docs/js/game.mjs"
+    },
+    {
+      "t": 121,
+      "method": "GET",
+      "url": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js"
+    },
+    {
+      "t": 121,
+      "method": "GET",
+      "url": "http://127.0.0.1:8123/docs/js/rules.mjs"
+    }
+  ],
+  "failedRequests": [],
+  "httpErrors": [],
+  "screenshots": [
+    {
+      "t": 7026,
+      "file": "01-initial.jpg",
+      "label": "initial"
+    },
+    {
+      "t": 9686,
+      "file": "02-started.jpg",
+      "label": "started"
+    },
+    {
+      "t": 15026,
+      "file": "03-aimed-1.jpg",
+      "label": "aimed-1"
+    },
+    {
+      "t": 16030,
+      "file": "04-hit.jpg",
+      "label": "hit"
+    },
+    {
+      "t": 21728,
+      "file": "05-reloading.jpg",
+      "label": "reloading"
+    },
+    {
+      "t": 23018,
+      "file": "06-reloaded.jpg",
+      "label": "reloaded"
+    },
+    {
+      "t": 24325,
+      "file": "07-reloading-partial.jpg",
+      "label": "reloading-partial"
+    }
+  ],
+  "result": "passed",
+  "observer": [
+    {
+      "type": "panel",
+      "t": 49,
+      "value": "panel-start"
+    },
+    {
+      "type": "ammo",
+      "t": 49,
+      "value": "12 / 12"
+    },
+    {
+      "type": "status",
+      "t": 49,
+      "value": ""
+    },
+    {
+      "type": "reloadBar",
+      "t": 49,
+      "value": "hidden"
+    },
+    {
+      "type": "mousedown",
+      "t": 7486.1,
+      "locked": false
+    },
+    {
+      "type": "lock",
+      "t": 7595.8,
+      "el": "scene"
+    },
+    {
+      "type": "panel",
+      "t": 7596.2,
+      "value": null
+    },
+    {
+      "type": "mousedown",
+      "t": 14985.3,
+      "locked": true
+    },
+    {
+      "type": "ammo",
+      "t": 15075.7,
+      "value": "11 / 12"
+    },
+    {
+      "type": "mousedown",
+      "t": 17572.8,
+      "locked": true
+    },
+    {
+      "type": "ammo",
+      "t": 17779.2,
+      "value": "10 / 12"
+    },
+    {
+      "type": "mousedown",
+      "t": 17835.7,
+      "locked": true
+    },
+    {
+      "type": "ammo",
+      "t": 17919.5,
+      "value": "9 / 12"
+    },
+    {
+      "type": "mousedown",
+      "t": 18143.3,
+      "locked": true
+    },
+    {
+      "type": "ammo",
+      "t": 18177.9,
+      "value": "8 / 12"
+    },
+    {
+      "type": "mousedown",
+      "t": 18472.3,
+      "locked": true
+    },
+    {
+      "type": "ammo",
+      "t": 18482.9,
+      "value": "7 / 12"
+    },
+    {
+      "type": "mousedown",
+      "t": 18779.3,
+      "locked": true
+    },
+    {
+      "type": "ammo",
+      "t": 18784,
+      "value": "6 / 12"
+    },
+    {
+      "type": "mousedown",
+      "t": 19072.1,
+      "locked": true
+    },
+    {
+      "type": "ammo",
+      "t": 19142.3,
+      "value": "5 / 12"
+    },
+    {
+      "type": "mousedown",
+      "t": 19375.8,
+      "locked": true
+    },
+    {
+      "type": "ammo",
+      "t": 19391.6,
+      "value": "4 / 12"
+    },
+    {
+      "type": "mousedown",
+      "t": 19676.5,
+      "locked": true
+    },
+    {
+      "type": "ammo",
+      "t": 19680.6,
+      "value": "3 / 12"
+    },
+    {
+      "type": "mousedown",
+      "t": 19975.8,
+      "locked": true
+    },
+    {
+      "type": "ammo",
+      "t": 19983,
+      "value": "2 / 12"
+    },
+    {
+      "type": "mousedown",
+      "t": 20275.5,
+      "locked": true
+    },
+    {
+      "type": "ammo",
+      "t": 20290.8,
+      "value": "1 / 12"
+    },
+    {
+      "type": "mousedown",
+      "t": 20573.4,
+      "locked": true
+    },
+    {
+      "type": "ammo",
+      "t": 20584.4,
+      "value": "0 / 12"
+    },
+    {
+      "type": "status",
+      "t": 20584.4,
+      "value": "R 키로 재장전"
+    },
+    {
+      "type": "mousedown",
+      "t": 20876.2,
+      "locked": true
+    },
+    {
+      "type": "status",
+      "t": 20883.6,
+      "value": "탄창이 비었습니다 — R 재장전"
+    },
+    {
+      "type": "key",
+      "t": 21182.4,
+      "code": "KeyR"
+    },
+    {
+      "type": "status",
+      "t": 21274.1,
+      "value": "재장전 중…"
+    },
+    {
+      "type": "reloadBar",
+      "t": 21274.1,
+      "value": "shown"
+    },
+    {
+      "type": "mousedown",
+      "t": 21685.3,
+      "locked": true
+    },
+    {
+      "type": "ammo",
+      "t": 22591.3,
+      "value": "12 / 12"
+    },
+    {
+      "type": "status",
+      "t": 22591.3,
+      "value": ""
+    },
+    {
+      "type": "reloadBar",
+      "t": 22591.3,
+      "value": "hidden"
+    },
+    {
+      "type": "mousedown",
+      "t": 22976.8,
+      "locked": true
+    },
+    {
+      "type": "ammo",
+      "t": 23041.6,
+      "value": "11 / 12"
+    },
+    {
+      "type": "key",
+      "t": 23284.4,
+      "code": "KeyR"
+    },
+    {
+      "type": "status",
+      "t": 23290.6,
+      "value": "재장전 중…"
+    },
+    {
+      "type": "reloadBar",
+      "t": 23290.6,
+      "value": "shown"
+    },
+    {
+      "type": "mousedown",
+      "t": 23472.6,
+      "locked": true
+    },
+    {
+      "type": "mousedown",
+      "t": 23741.3,
+      "locked": true
+    },
+    {
+      "type": "ammo",
+      "t": 24695.1,
+      "value": "12 / 12"
+    },
+    {
+      "type": "status",
+      "t": 24695.1,
+      "value": ""
+    },
+    {
+      "type": "reloadBar",
+      "t": 24695.1,
+      "value": "hidden"
+    },
+    {
+      "type": "mousedown",
+      "t": 24786.4,
+      "locked": true
+    },
+    {
+      "type": "ammo",
+      "t": 24877,
+      "value": "11 / 12"
+    }
+  ],
+  "problems": [],
+  "finishedAt": "2026-11-05T23:04:31.312Z"
+}

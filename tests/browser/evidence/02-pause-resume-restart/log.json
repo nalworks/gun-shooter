@@ -1,0 +1,566 @@
+{
+  "scenario": "02-pause-resume-restart",
+  "startedAt": "2026-11-05T23:04:31.929Z",
+  "revision": {
+    "head": "2350cf49a5440065b47339a7813e90ed8f1fa73d",
+    "statusShort": [
+      "M tests/browser/evidence/01-play-hit-miss-reload/01-initial.jpg",
+      " M tests/browser/evidence/01-play-hit-miss-reload/02-started.jpg",
+      " M tests/browser/evidence/01-play-hit-miss-reload/03-aimed-1.jpg",
+      " M tests/browser/evidence/01-play-hit-miss-reload/04-hit.jpg",
+      " M tests/browser/evidence/01-play-hit-miss-reload/05-reloading.jpg",
+      " M tests/browser/evidence/01-play-hit-miss-reload/06-reloaded.jpg",
+      " M tests/browser/evidence/01-play-hit-miss-reload/log.json",
+      " D tests/browser/evidence/02-pause-resume-restart/01-paused.jpg",
+      " D tests/browser/evidence/02-pause-resume-restart/02-restart-after-hit.jpg",
+      " D tests/browser/evidence/02-pause-resume-restart/03-paused-during-reload.jpg",
+      " D tests/browser/evidence/02-pause-resume-restart/04-restart-during-reload.jpg",
+      " D tests/browser/evidence/02-pause-resume-restart/log.json",
+      " D tests/browser/evidence/03-full-round/01-ended.jpg",
+      " D tests/browser/evidence/03-full-round/02-restarted.jpg",
+      " D tests/browser/evidence/03-full-round/log.json",
+      " M tests/browser/game.spec.mjs",
+      " M tests/browser/helpers.mjs",
+      "?? tests/browser/evidence/01-play-hit-miss-reload/07-reloading-partial.jpg"
+    ],
+    "docsDiffVsHead": "none",
+    "docsTreeHash": [
+      "a0c0dbc1e179b2a0c45e14deeaa0b25b6284e0d6",
+      "c5b124287b9573a10e71c7e21e5f69c9513ba98c",
+      "62f7c88d881e68bd9c46972b51d5c2f907161bfa",
+      "625985e09c50fb9f9a1e27ec0a271463f7bc0158"
+    ]
+  },
+  "environment": {
+    "node": "v22.23.4",
+    "platform": "linux arm64",
+    "browser": "chromium 158.0.8127.18",
+    "launchArgs": [
+      "channel=chromium (new headless)",
+      "--headless",
+      "--use-angle=swiftshader",
+      "--enable-unsafe-swiftshader"
+    ],
+    "command": "npm run test:browser"
+  },
+  "steps": [
+    {
+      "t": 2543,
+      "step": "#btn-start 클릭 → Pointer Lock 획득",
+      "score": "0",
+      "ammo": "12 / 12",
+      "time": "60.0",
+      "status": "",
+      "reloadBarHidden": true,
+      "panel": null,
+      "panelText": null,
+      "error": null,
+      "pointerLock": "#scene",
+      "attempt": 1
+    },
+    {
+      "t": 3371,
+      "step": "시작",
+      "score": "0",
+      "ammo": "12 / 12",
+      "time": "59.2",
+      "status": "",
+      "reloadBarHidden": true,
+      "panel": null,
+      "panelText": null,
+      "error": null,
+      "pointerLock": "#scene"
+    },
+    {
+      "t": 4841,
+      "step": "aim: 정면 시점에서 보이는 정지 표적",
+      "visible": [
+        {
+          "slot": 0,
+          "screen": {
+            "x": 274,
+            "y": 307,
+            "r": 17.2
+          }
+        },
+        {
+          "slot": 11,
+          "screen": {
+            "x": 563,
+            "y": 300,
+            "r": 6.9
+          }
+        }
+      ]
+    },
+    {
+      "t": 6273,
+      "step": "aim: 조준 후 화면 중앙 관측",
+      "slot": 0,
+      "yawRad": 0.4636476090008061,
+      "pitchRad": -0.014906015766106059,
+      "centeredBlob": {
+        "x": 480.6666666666667,
+        "y": 300.6666666666667,
+        "pixels": 54,
+        "w": 24,
+        "h": 24
+      }
+    },
+    {
+      "t": 6641,
+      "step": "표적 사격 시도 1",
+      "score": "100",
+      "ammo": "11 / 12",
+      "time": "55.9",
+      "status": "",
+      "reloadBarHidden": true,
+      "panel": null,
+      "panelText": null,
+      "error": null,
+      "pointerLock": "#scene"
+    },
+    {
+      "t": 9175,
+      "step": "일시 정지 진입",
+      "score": "100",
+      "ammo": "11 / 12",
+      "time": "53.5",
+      "status": "",
+      "reloadBarHidden": true,
+      "panel": "panel-pause",
+      "panelText": "일시 정지 타이머가 멈췄습니다. 이어서 하려면 계속하기를 누르세요. 계속하기 다시 시작 다시 시작하면 현재 점수와 진행 상황이 초기화되고 새 60초 라운드가 시작됩니다.",
+      "error": null,
+      "pointerLock": null,
+      "escKeyReleasedLock": false,
+      "releasedVia": "document.exitPointerLock() (Esc 키는 헤드리스에서 잠금을 해제하지 않음)"
+    },
+    {
+      "t": 12767,
+      "step": "일시 정지 3초 후",
+      "score": "100",
+      "ammo": "11 / 12",
+      "time": "53.5",
+      "status": "",
+      "reloadBarHidden": true,
+      "panel": "panel-pause",
+      "panelText": "일시 정지 타이머가 멈췄습니다. 이어서 하려면 계속하기를 누르세요. 계속하기 다시 시작 다시 시작하면 현재 점수와 진행 상황이 초기화되고 새 60초 라운드가 시작됩니다.",
+      "error": null,
+      "pointerLock": null
+    },
+    {
+      "t": 13043,
+      "step": "#btn-resume 클릭 → Pointer Lock 획득",
+      "score": "100",
+      "ammo": "11 / 12",
+      "time": "53.5",
+      "status": "",
+      "reloadBarHidden": true,
+      "panel": null,
+      "panelText": null,
+      "error": null,
+      "pointerLock": "#scene",
+      "attempt": 1
+    },
+    {
+      "t": 14565,
+      "step": "계속하기 후 1.5초",
+      "score": "100",
+      "ammo": "11 / 12",
+      "time": "52.0",
+      "status": "",
+      "reloadBarHidden": true,
+      "panel": null,
+      "panelText": null,
+      "error": null,
+      "pointerLock": "#scene"
+    },
+    {
+      "t": 15634,
+      "step": "두 번째 일시 정지",
+      "score": "100",
+      "ammo": "11 / 12",
+      "time": "50.9",
+      "status": "",
+      "reloadBarHidden": true,
+      "panel": "panel-pause",
+      "panelText": "일시 정지 타이머가 멈췄습니다. 이어서 하려면 계속하기를 누르세요. 계속하기 다시 시작 다시 시작하면 현재 점수와 진행 상황이 초기화되고 새 60초 라운드가 시작됩니다.",
+      "error": null,
+      "pointerLock": null,
+      "escKeyReleasedLock": false,
+      "releasedVia": "document.exitPointerLock() (Esc 키는 헤드리스에서 잠금을 해제하지 않음)"
+    },
+    {
+      "t": 16275,
+      "step": "#btn-pause-restart 클릭 → Pointer Lock 획득",
+      "score": "0",
+      "ammo": "12 / 12",
+      "time": "60.0",
+      "status": "",
+      "reloadBarHidden": true,
+      "panel": null,
+      "panelText": null,
+      "error": null,
+      "pointerLock": "#scene",
+      "attempt": 1
+    },
+    {
+      "t": 16733,
+      "step": "명중 후 다시 시작",
+      "score": "0",
+      "ammo": "12 / 12",
+      "time": "59.6",
+      "status": "",
+      "reloadBarHidden": true,
+      "panel": null,
+      "panelText": null,
+      "error": null,
+      "pointerLock": "#scene"
+    },
+    {
+      "t": 17772,
+      "step": "조준 초기화 관측",
+      "score": "0",
+      "ammo": "12 / 12",
+      "time": "58.5",
+      "status": "",
+      "reloadBarHidden": true,
+      "panel": null,
+      "panelText": null,
+      "error": null,
+      "pointerLock": "#scene",
+      "diffToInitialView": 0.4160949074074086,
+      "diffToTurnedView": 31.685606481481464
+    },
+    {
+      "t": 19164,
+      "step": "재장전 시작",
+      "score": "0",
+      "ammo": "11 / 12",
+      "time": "57.1",
+      "status": "재장전 중…",
+      "reloadBarHidden": false,
+      "panel": null,
+      "panelText": null,
+      "error": null,
+      "pointerLock": "#scene"
+    },
+    {
+      "t": 20274,
+      "step": "재장전 중 일시 정지",
+      "score": "0",
+      "ammo": "11 / 12",
+      "time": "56.0",
+      "status": "재장전 중…",
+      "reloadBarHidden": false,
+      "panel": "panel-pause",
+      "panelText": "일시 정지 타이머가 멈췄습니다. 이어서 하려면 계속하기를 누르세요. 계속하기 다시 시작 다시 시작하면 현재 점수와 진행 상황이 초기화되고 새 60초 라운드가 시작됩니다.",
+      "error": null,
+      "pointerLock": null,
+      "escKeyReleasedLock": false,
+      "releasedVia": "document.exitPointerLock() (Esc 키는 헤드리스에서 잠금을 해제하지 않음)"
+    },
+    {
+      "t": 20866,
+      "step": "#btn-pause-restart 클릭 → Pointer Lock 획득",
+      "score": "0",
+      "ammo": "12 / 12",
+      "time": "59.9",
+      "status": "",
+      "reloadBarHidden": true,
+      "panel": null,
+      "panelText": null,
+      "error": null,
+      "pointerLock": "#scene",
+      "attempt": 1
+    },
+    {
+      "t": 21270,
+      "step": "재장전 중 다시 시작",
+      "score": "0",
+      "ammo": "12 / 12",
+      "time": "59.5",
+      "status": "",
+      "reloadBarHidden": true,
+      "panel": null,
+      "panelText": null,
+      "error": null,
+      "pointerLock": "#scene"
+    },
+    {
+      "t": 22036,
+      "step": "두 번째 재시작 조준 초기화",
+      "score": "0",
+      "ammo": "12 / 12",
+      "time": "58.7",
+      "status": "",
+      "reloadBarHidden": true,
+      "panel": null,
+      "panelText": null,
+      "error": null,
+      "pointerLock": "#scene",
+      "diffToInitialView": 0.591511574074076
+    },
+    {
+      "t": 23136,
+      "step": "재시작 2회 후 첫 클릭",
+      "score": "0",
+      "ammo": "11 / 12",
+      "time": "57.7",
+      "status": "",
+      "reloadBarHidden": true,
+      "panel": null,
+      "panelText": null,
+      "error": null,
+      "pointerLock": "#scene"
+    }
+  ],
+  "console": [],
+  "pageErrors": [],
+  "requests": [
+    {
+      "t": 81,
+      "method": "GET",
+      "url": "http://127.0.0.1:8123/docs/index.html"
+    },
+    {
+      "t": 94,
+      "method": "GET",
+      "url": "http://127.0.0.1:8123/docs/styles.css"
+    },
+    {
+      "t": 94,
+      "method": "GET",
+      "url": "http://127.0.0.1:8123/docs/js/game.mjs"
+    },
+    {
+      "t": 173,
+      "method": "GET",
+      "url": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js"
+    },
+    {
+      "t": 173,
+      "method": "GET",
+      "url": "http://127.0.0.1:8123/docs/js/rules.mjs"
+    }
+  ],
+  "failedRequests": [],
+  "httpErrors": [],
+  "screenshots": [
+    {
+      "t": 9750,
+      "file": "01-paused.jpg",
+      "label": "paused"
+    },
+    {
+      "t": 18366,
+      "file": "02-restart-after-hit.jpg",
+      "label": "restart-after-hit"
+    },
+    {
+      "t": 20565,
+      "file": "03-paused-during-reload.jpg",
+      "label": "paused-during-reload"
+    },
+    {
+      "t": 22471,
+      "file": "04-restart-during-reload.jpg",
+      "label": "restart-during-reload"
+    }
+  ],
+  "result": "passed",
+  "observer": [
+    {
+      "type": "panel",
+      "t": 13.4,
+      "value": "panel-start"
+    },
+    {
+      "type": "ammo",
+      "t": 13.5,
+      "value": "12 / 12"
+    },
+    {
+      "type": "status",
+      "t": 13.5,
+      "value": ""
+    },
+    {
+      "type": "reloadBar",
+      "t": 13.5,
+      "value": "hidden"
+    },
+    {
+      "type": "mousedown",
+      "t": 2384.8,
+      "locked": false
+    },
+    {
+      "type": "lock",
+      "t": 2453.7,
+      "el": "scene"
+    },
+    {
+      "type": "panel",
+      "t": 2454.4,
+      "value": null
+    },
+    {
+      "type": "mousedown",
+      "t": 6196.1,
+      "locked": true
+    },
+    {
+      "type": "ammo",
+      "t": 6256.8,
+      "value": "11 / 12"
+    },
+    {
+      "type": "key",
+      "t": 7959.8,
+      "code": "Escape"
+    },
+    {
+      "type": "unlock",
+      "t": 8990.3,
+      "el": null
+    },
+    {
+      "type": "panel",
+      "t": 8990.5,
+      "value": "panel-pause"
+    },
+    {
+      "type": "mousedown",
+      "t": 12891,
+      "locked": false
+    },
+    {
+      "type": "lock",
+      "t": 12953.3,
+      "el": "scene"
+    },
+    {
+      "type": "panel",
+      "t": 12953.4,
+      "value": null
+    },
+    {
+      "type": "key",
+      "t": 14487.9,
+      "code": "Escape"
+    },
+    {
+      "type": "unlock",
+      "t": 15494.8,
+      "el": null
+    },
+    {
+      "type": "panel",
+      "t": 15494.8,
+      "value": "panel-pause"
+    },
+    {
+      "type": "mousedown",
+      "t": 16087.3,
+      "locked": false
+    },
+    {
+      "type": "lock",
+      "t": 16138,
+      "el": "scene"
+    },
+    {
+      "type": "panel",
+      "t": 16138.2,
+      "value": null
+    },
+    {
+      "type": "ammo",
+      "t": 16183.5,
+      "value": "12 / 12"
+    },
+    {
+      "type": "mousedown",
+      "t": 18690.3,
+      "locked": true
+    },
+    {
+      "type": "ammo",
+      "t": 18762.9,
+      "value": "11 / 12"
+    },
+    {
+      "type": "key",
+      "t": 18956.2,
+      "code": "KeyR"
+    },
+    {
+      "type": "status",
+      "t": 18964.7,
+      "value": "재장전 중…"
+    },
+    {
+      "type": "reloadBar",
+      "t": 18964.7,
+      "value": "shown"
+    },
+    {
+      "type": "key",
+      "t": 19086.5,
+      "code": "Escape"
+    },
+    {
+      "type": "unlock",
+      "t": 20092.4,
+      "el": null
+    },
+    {
+      "type": "panel",
+      "t": 20092.4,
+      "value": "panel-pause"
+    },
+    {
+      "type": "mousedown",
+      "t": 20686.3,
+      "locked": false
+    },
+    {
+      "type": "lock",
+      "t": 20695.8,
+      "el": "scene"
+    },
+    {
+      "type": "panel",
+      "t": 20695.9,
+      "value": null
+    },
+    {
+      "type": "ammo",
+      "t": 20769.3,
+      "value": "12 / 12"
+    },
+    {
+      "type": "status",
+      "t": 20769.3,
+      "value": ""
+    },
+    {
+      "type": "reloadBar",
+      "t": 20769.3,
+      "value": "hidden"
+    },
+    {
+      "type": "mousedown",
+      "t": 22789.3,
+      "locked": true
+    },
+    {
+      "type": "ammo",
+      "t": 22868.4,
+      "value": "11 / 12"
+    }
+  ],
+  "problems": [],
+  "finishedAt": "2026-11-05T23:04:55.095Z"
+}

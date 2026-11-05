@@ -1,0 +1,856 @@
+{
+  "scenario": "03-full-round",
+  "startedAt": "2026-11-05T23:04:55.605Z",
+  "revision": {
+    "head": "2350cf49a5440065b47339a7813e90ed8f1fa73d",
+    "statusShort": [
+      "M tests/browser/evidence/01-play-hit-miss-reload/01-initial.jpg",
+      " M tests/browser/evidence/01-play-hit-miss-reload/02-started.jpg",
+      " M tests/browser/evidence/01-play-hit-miss-reload/03-aimed-1.jpg",
+      " M tests/browser/evidence/01-play-hit-miss-reload/04-hit.jpg",
+      " M tests/browser/evidence/01-play-hit-miss-reload/05-reloading.jpg",
+      " M tests/browser/evidence/01-play-hit-miss-reload/06-reloaded.jpg",
+      " M tests/browser/evidence/01-play-hit-miss-reload/log.json",
+      " M tests/browser/evidence/02-pause-resume-restart/01-paused.jpg",
+      " M tests/browser/evidence/02-pause-resume-restart/02-restart-after-hit.jpg",
+      " M tests/browser/evidence/02-pause-resume-restart/03-paused-during-reload.jpg",
+      " M tests/browser/evidence/02-pause-resume-restart/04-restart-during-reload.jpg",
+      " M tests/browser/evidence/02-pause-resume-restart/log.json",
+      " D tests/browser/evidence/03-full-round/01-ended.jpg",
+      " D tests/browser/evidence/03-full-round/02-restarted.jpg",
+      " D tests/browser/evidence/03-full-round/log.json",
+      " M tests/browser/game.spec.mjs",
+      " M tests/browser/helpers.mjs",
+      "?? tests/browser/evidence/01-play-hit-miss-reload/07-reloading-partial.jpg"
+    ],
+    "docsDiffVsHead": "none",
+    "docsTreeHash": [
+      "a0c0dbc1e179b2a0c45e14deeaa0b25b6284e0d6",
+      "c5b124287b9573a10e71c7e21e5f69c9513ba98c",
+      "62f7c88d881e68bd9c46972b51d5c2f907161bfa",
+      "625985e09c50fb9f9a1e27ec0a271463f7bc0158"
+    ]
+  },
+  "environment": {
+    "node": "v22.23.4",
+    "platform": "linux arm64",
+    "browser": "chromium 158.0.8127.18",
+    "launchArgs": [
+      "channel=chromium (new headless)",
+      "--headless",
+      "--use-angle=swiftshader",
+      "--enable-unsafe-swiftshader"
+    ],
+    "command": "npm run test:browser"
+  },
+  "steps": [
+    {
+      "t": 2670,
+      "step": "#btn-start 클릭 → Pointer Lock 획득",
+      "score": "0",
+      "ammo": "12 / 12",
+      "time": "59.9",
+      "status": "",
+      "reloadBarHidden": true,
+      "panel": null,
+      "panelText": null,
+      "error": null,
+      "pointerLock": "#scene",
+      "attempt": 1
+    },
+    {
+      "t": 2672,
+      "step": "라운드 시작",
+      "score": "0",
+      "ammo": "12 / 12",
+      "time": "59.9",
+      "status": "",
+      "reloadBarHidden": true,
+      "panel": null,
+      "panelText": null,
+      "error": null,
+      "pointerLock": "#scene"
+    },
+    {
+      "t": 4193,
+      "step": "aim: 정면 시점에서 보이는 정지 표적",
+      "visible": [
+        {
+          "slot": 4,
+          "screen": {
+            "x": 315,
+            "y": 298,
+            "r": 10.3
+          }
+        },
+        {
+          "slot": 8,
+          "screen": {
+            "x": 635,
+            "y": 297,
+            "r": 8.6
+          }
+        },
+        {
+          "slot": 10,
+          "screen": {
+            "x": 480,
+            "y": 294,
+            "r": 6.9
+          }
+        },
+        {
+          "slot": 11,
+          "screen": {
+            "x": 563,
+            "y": 300,
+            "r": 6.9
+          }
+        }
+      ]
+    },
+    {
+      "t": 5597,
+      "step": "aim: 조준 후 화면 중앙 관측",
+      "slot": 4,
+      "yawRad": 0.3805063771123649,
+      "pitchRad": 0.004642350104401689,
+      "centeredBlob": {
+        "x": 480.54545454545456,
+        "y": 300.3636363636364,
+        "pixels": 22,
+        "w": 16,
+        "h": 16
+      }
+    },
+    {
+      "t": 6262,
+      "step": "사격 1발",
+      "score": "100",
+      "ammo": "11 / 12",
+      "time": "56.5",
+      "status": "",
+      "reloadBarHidden": true,
+      "panel": null,
+      "panelText": null,
+      "error": null,
+      "pointerLock": "#scene"
+    },
+    {
+      "t": 7292,
+      "step": "시간 관측",
+      "sinceClickMs": 5032,
+      "time": "55.4",
+      "panel": null,
+      "score": "100",
+      "pointerLock": "#scene"
+    },
+    {
+      "t": 8358,
+      "step": "시간 관측",
+      "sinceClickMs": 6098,
+      "time": "54.3",
+      "panel": null,
+      "score": "100",
+      "pointerLock": "#scene"
+    },
+    {
+      "t": 9391,
+      "step": "시간 관측",
+      "sinceClickMs": 7131,
+      "time": "53.3",
+      "panel": null,
+      "score": "100",
+      "pointerLock": "#scene"
+    },
+    {
+      "t": 10395,
+      "step": "시간 관측",
+      "sinceClickMs": 8135,
+      "time": "52.4",
+      "panel": null,
+      "score": "100",
+      "pointerLock": "#scene"
+    },
+    {
+      "t": 11401,
+      "step": "시간 관측",
+      "sinceClickMs": 9142,
+      "time": "51.2",
+      "panel": null,
+      "score": "100",
+      "pointerLock": "#scene"
+    },
+    {
+      "t": 12463,
+      "step": "시간 관측",
+      "sinceClickMs": 10203,
+      "time": "50.1",
+      "panel": null,
+      "score": "100",
+      "pointerLock": "#scene"
+    },
+    {
+      "t": 13491,
+      "step": "시간 관측",
+      "sinceClickMs": 11231,
+      "time": "49.2",
+      "panel": null,
+      "score": "100",
+      "pointerLock": "#scene"
+    },
+    {
+      "t": 14496,
+      "step": "시간 관측",
+      "sinceClickMs": 12237,
+      "time": "48.1",
+      "panel": null,
+      "score": "100",
+      "pointerLock": "#scene"
+    },
+    {
+      "t": 15559,
+      "step": "시간 관측",
+      "sinceClickMs": 13299,
+      "time": "47.2",
+      "panel": null,
+      "score": "100",
+      "pointerLock": "#scene"
+    },
+    {
+      "t": 16590,
+      "step": "시간 관측",
+      "sinceClickMs": 14330,
+      "time": "46.1",
+      "panel": null,
+      "score": "100",
+      "pointerLock": "#scene"
+    },
+    {
+      "t": 17659,
+      "step": "시간 관측",
+      "sinceClickMs": 15399,
+      "time": "45.0",
+      "panel": null,
+      "score": "100",
+      "pointerLock": "#scene"
+    },
+    {
+      "t": 18664,
+      "step": "시간 관측",
+      "sinceClickMs": 16405,
+      "time": "43.9",
+      "panel": null,
+      "score": "100",
+      "pointerLock": "#scene"
+    },
+    {
+      "t": 19689,
+      "step": "시간 관측",
+      "sinceClickMs": 17430,
+      "time": "43.0",
+      "panel": null,
+      "score": "100",
+      "pointerLock": "#scene"
+    },
+    {
+      "t": 20694,
+      "step": "시간 관측",
+      "sinceClickMs": 18435,
+      "time": "42.0",
+      "panel": null,
+      "score": "100",
+      "pointerLock": "#scene"
+    },
+    {
+      "t": 21761,
+      "step": "시간 관측",
+      "sinceClickMs": 19501,
+      "time": "40.9",
+      "panel": null,
+      "score": "100",
+      "pointerLock": "#scene"
+    },
+    {
+      "t": 22766,
+      "step": "시간 관측",
+      "sinceClickMs": 20506,
+      "time": "39.9",
+      "panel": null,
+      "score": "100",
+      "pointerLock": "#scene"
+    },
+    {
+      "t": 23791,
+      "step": "시간 관측",
+      "sinceClickMs": 21531,
+      "time": "38.9",
+      "panel": null,
+      "score": "100",
+      "pointerLock": "#scene"
+    },
+    {
+      "t": 24795,
+      "step": "시간 관측",
+      "sinceClickMs": 22535,
+      "time": "37.8",
+      "panel": null,
+      "score": "100",
+      "pointerLock": "#scene"
+    },
+    {
+      "t": 25799,
+      "step": "시간 관측",
+      "sinceClickMs": 23539,
+      "time": "36.8",
+      "panel": null,
+      "score": "100",
+      "pointerLock": "#scene"
+    },
+    {
+      "t": 26859,
+      "step": "시간 관측",
+      "sinceClickMs": 24599,
+      "time": "35.8",
+      "panel": null,
+      "score": "100",
+      "pointerLock": "#scene"
+    },
+    {
+      "t": 27867,
+      "step": "시간 관측",
+      "sinceClickMs": 25607,
+      "time": "34.8",
+      "panel": null,
+      "score": "100",
+      "pointerLock": "#scene"
+    },
+    {
+      "t": 28899,
+      "step": "시간 관측",
+      "sinceClickMs": 26639,
+      "time": "33.7",
+      "panel": null,
+      "score": "100",
+      "pointerLock": "#scene"
+    },
+    {
+      "t": 29906,
+      "step": "시간 관측",
+      "sinceClickMs": 27646,
+      "time": "32.7",
+      "panel": null,
+      "score": "100",
+      "pointerLock": "#scene"
+    },
+    {
+      "t": 30961,
+      "step": "시간 관측",
+      "sinceClickMs": 28701,
+      "time": "31.7",
+      "panel": null,
+      "score": "100",
+      "pointerLock": "#scene"
+    },
+    {
+      "t": 31990,
+      "step": "시간 관측",
+      "sinceClickMs": 29730,
+      "time": "30.7",
+      "panel": null,
+      "score": "100",
+      "pointerLock": "#scene"
+    },
+    {
+      "t": 33058,
+      "step": "시간 관측",
+      "sinceClickMs": 30798,
+      "time": "29.6",
+      "panel": null,
+      "score": "100",
+      "pointerLock": "#scene"
+    },
+    {
+      "t": 34063,
+      "step": "시간 관측",
+      "sinceClickMs": 31804,
+      "time": "28.6",
+      "panel": null,
+      "score": "100",
+      "pointerLock": "#scene"
+    },
+    {
+      "t": 35089,
+      "step": "시간 관측",
+      "sinceClickMs": 32830,
+      "time": "27.6",
+      "panel": null,
+      "score": "100",
+      "pointerLock": "#scene"
+    },
+    {
+      "t": 36094,
+      "step": "시간 관측",
+      "sinceClickMs": 33835,
+      "time": "26.5",
+      "panel": null,
+      "score": "100",
+      "pointerLock": "#scene"
+    },
+    {
+      "t": 37158,
+      "step": "시간 관측",
+      "sinceClickMs": 34899,
+      "time": "25.5",
+      "panel": null,
+      "score": "100",
+      "pointerLock": "#scene"
+    },
+    {
+      "t": 38189,
+      "step": "시간 관측",
+      "sinceClickMs": 35929,
+      "time": "24.5",
+      "panel": null,
+      "score": "100",
+      "pointerLock": "#scene"
+    },
+    {
+      "t": 39196,
+      "step": "시간 관측",
+      "sinceClickMs": 36937,
+      "time": "23.6",
+      "panel": null,
+      "score": "100",
+      "pointerLock": "#scene"
+    },
+    {
+      "t": 40259,
+      "step": "시간 관측",
+      "sinceClickMs": 37999,
+      "time": "22.4",
+      "panel": null,
+      "score": "100",
+      "pointerLock": "#scene"
+    },
+    {
+      "t": 41264,
+      "step": "시간 관측",
+      "sinceClickMs": 39004,
+      "time": "21.3",
+      "panel": null,
+      "score": "100",
+      "pointerLock": "#scene"
+    },
+    {
+      "t": 42290,
+      "step": "시간 관측",
+      "sinceClickMs": 40030,
+      "time": "20.4",
+      "panel": null,
+      "score": "100",
+      "pointerLock": "#scene"
+    },
+    {
+      "t": 43300,
+      "step": "시간 관측",
+      "sinceClickMs": 41040,
+      "time": "19.3",
+      "panel": null,
+      "score": "100",
+      "pointerLock": "#scene"
+    },
+    {
+      "t": 44360,
+      "step": "시간 관측",
+      "sinceClickMs": 42100,
+      "time": "18.3",
+      "panel": null,
+      "score": "100",
+      "pointerLock": "#scene"
+    },
+    {
+      "t": 45388,
+      "step": "시간 관측",
+      "sinceClickMs": 43128,
+      "time": "17.3",
+      "panel": null,
+      "score": "100",
+      "pointerLock": "#scene"
+    },
+    {
+      "t": 46399,
+      "step": "시간 관측",
+      "sinceClickMs": 44140,
+      "time": "16.2",
+      "panel": null,
+      "score": "100",
+      "pointerLock": "#scene"
+    },
+    {
+      "t": 47459,
+      "step": "시간 관측",
+      "sinceClickMs": 45199,
+      "time": "15.2",
+      "panel": null,
+      "score": "100",
+      "pointerLock": "#scene"
+    },
+    {
+      "t": 48464,
+      "step": "시간 관측",
+      "sinceClickMs": 46204,
+      "time": "14.2",
+      "panel": null,
+      "score": "100",
+      "pointerLock": "#scene"
+    },
+    {
+      "t": 49492,
+      "step": "시간 관측",
+      "sinceClickMs": 47233,
+      "time": "13.1",
+      "panel": null,
+      "score": "100",
+      "pointerLock": "#scene"
+    },
+    {
+      "t": 50498,
+      "step": "시간 관측",
+      "sinceClickMs": 48238,
+      "time": "12.1",
+      "panel": null,
+      "score": "100",
+      "pointerLock": "#scene"
+    },
+    {
+      "t": 51559,
+      "step": "시간 관측",
+      "sinceClickMs": 49300,
+      "time": "11.1",
+      "panel": null,
+      "score": "100",
+      "pointerLock": "#scene"
+    },
+    {
+      "t": 52590,
+      "step": "시간 관측",
+      "sinceClickMs": 50330,
+      "time": "10.1",
+      "panel": null,
+      "score": "100",
+      "pointerLock": "#scene"
+    },
+    {
+      "t": 53596,
+      "step": "시간 관측",
+      "sinceClickMs": 51336,
+      "time": "9.0",
+      "panel": null,
+      "score": "100",
+      "pointerLock": "#scene"
+    },
+    {
+      "t": 54602,
+      "step": "시간 관측",
+      "sinceClickMs": 52342,
+      "time": "8.0",
+      "panel": null,
+      "score": "100",
+      "pointerLock": "#scene"
+    },
+    {
+      "t": 55660,
+      "step": "시간 관측",
+      "sinceClickMs": 53400,
+      "time": "7.1",
+      "panel": null,
+      "score": "100",
+      "pointerLock": "#scene"
+    },
+    {
+      "t": 56691,
+      "step": "시간 관측",
+      "sinceClickMs": 54431,
+      "time": "6.0",
+      "panel": null,
+      "score": "100",
+      "pointerLock": "#scene"
+    },
+    {
+      "t": 57696,
+      "step": "시간 관측",
+      "sinceClickMs": 55436,
+      "time": "4.9",
+      "panel": null,
+      "score": "100",
+      "pointerLock": "#scene"
+    },
+    {
+      "t": 58702,
+      "step": "시간 관측",
+      "sinceClickMs": 56442,
+      "time": "3.9",
+      "panel": null,
+      "score": "100",
+      "pointerLock": "#scene"
+    },
+    {
+      "t": 59790,
+      "step": "시간 관측",
+      "sinceClickMs": 57530,
+      "time": "2.9",
+      "panel": null,
+      "score": "100",
+      "pointerLock": "#scene"
+    },
+    {
+      "t": 60858,
+      "step": "시간 관측",
+      "sinceClickMs": 58598,
+      "time": "1.9",
+      "panel": null,
+      "score": "100",
+      "pointerLock": "#scene"
+    },
+    {
+      "t": 61864,
+      "step": "시간 관측",
+      "sinceClickMs": 59604,
+      "time": "0.8",
+      "panel": null,
+      "score": "100",
+      "pointerLock": "#scene"
+    },
+    {
+      "t": 62892,
+      "step": "시간 관측",
+      "sinceClickMs": 60632,
+      "time": "0.0",
+      "panel": "panel-end",
+      "score": "100",
+      "pointerLock": null
+    },
+    {
+      "t": 62896,
+      "step": "활성 라운드 시간(페이지 시계)",
+      "lockAtMs": 2474.4,
+      "endPanelAtMs": 62505,
+      "activeMs": 60031,
+      "unlockAfterEndMs": 4,
+      "eventsBetween": [
+        {
+          "type": "panel",
+          "value": null,
+          "t": 2474.8
+        },
+        {
+          "type": "mousedown",
+          "value": null,
+          "t": 5562.2
+        }
+      ]
+    },
+    {
+      "t": 62961,
+      "step": "종료 화면",
+      "score": "100",
+      "ammo": "11 / 12",
+      "time": "0.0",
+      "status": "",
+      "reloadBarHidden": true,
+      "panel": "panel-end",
+      "panelText": "라운드 종료 최종 점수 100 명중 1 / 발사 1 (명중률 100%) 다시 시작",
+      "error": null,
+      "pointerLock": null,
+      "activeMs": 60031,
+      "lastRunningTime": "0.8"
+    },
+    {
+      "t": 64094,
+      "step": "종료 후 입력",
+      "score": "100",
+      "ammo": "11 / 12",
+      "time": "0.0",
+      "status": "",
+      "reloadBarHidden": true,
+      "panel": "panel-end",
+      "panelText": "라운드 종료 최종 점수 100 명중 1 / 발사 1 (명중률 100%) 다시 시작",
+      "error": null,
+      "pointerLock": null
+    },
+    {
+      "t": 64564,
+      "step": "#btn-restart 클릭 → Pointer Lock 획득",
+      "score": "0",
+      "ammo": "12 / 12",
+      "time": "60.0",
+      "status": "",
+      "reloadBarHidden": true,
+      "panel": null,
+      "panelText": null,
+      "error": null,
+      "pointerLock": "#scene",
+      "attempt": 1
+    },
+    {
+      "t": 64868,
+      "step": "종료 화면에서 다시 시작",
+      "score": "0",
+      "ammo": "12 / 12",
+      "time": "59.8",
+      "status": "",
+      "reloadBarHidden": true,
+      "panel": null,
+      "panelText": null,
+      "error": null,
+      "pointerLock": "#scene"
+    },
+    {
+      "t": 66390,
+      "step": "다시 시작 1.5초 후",
+      "score": "0",
+      "ammo": "12 / 12",
+      "time": "58.2",
+      "status": "",
+      "reloadBarHidden": true,
+      "panel": null,
+      "panelText": null,
+      "error": null,
+      "pointerLock": "#scene"
+    }
+  ],
+  "console": [],
+  "pageErrors": [],
+  "requests": [
+    {
+      "t": 97,
+      "method": "GET",
+      "url": "http://127.0.0.1:8123/docs/index.html"
+    },
+    {
+      "t": 111,
+      "method": "GET",
+      "url": "http://127.0.0.1:8123/docs/styles.css"
+    },
+    {
+      "t": 111,
+      "method": "GET",
+      "url": "http://127.0.0.1:8123/docs/js/game.mjs"
+    },
+    {
+      "t": 165,
+      "method": "GET",
+      "url": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js"
+    },
+    {
+      "t": 165,
+      "method": "GET",
+      "url": "http://127.0.0.1:8123/docs/js/rules.mjs"
+    }
+  ],
+  "failedRequests": [],
+  "httpErrors": [],
+  "screenshots": [
+    {
+      "t": 63460,
+      "file": "01-ended.jpg",
+      "label": "ended"
+    },
+    {
+      "t": 66895,
+      "file": "02-restarted.jpg",
+      "label": "restarted"
+    }
+  ],
+  "result": "passed",
+  "observer": [
+    {
+      "type": "panel",
+      "t": 12.4,
+      "value": "panel-start"
+    },
+    {
+      "type": "ammo",
+      "t": 12.4,
+      "value": "12 / 12"
+    },
+    {
+      "type": "status",
+      "t": 12.4,
+      "value": ""
+    },
+    {
+      "type": "reloadBar",
+      "t": 12.4,
+      "value": "hidden"
+    },
+    {
+      "type": "mousedown",
+      "t": 2393.9,
+      "locked": false
+    },
+    {
+      "type": "lock",
+      "t": 2474.4,
+      "el": "scene"
+    },
+    {
+      "type": "panel",
+      "t": 2474.8,
+      "value": null
+    },
+    {
+      "type": "mousedown",
+      "t": 5562.2,
+      "locked": true
+    },
+    {
+      "type": "ammo",
+      "t": 5863.8,
+      "value": "11 / 12"
+    },
+    {
+      "type": "panel",
+      "t": 62505,
+      "value": "panel-end"
+    },
+    {
+      "type": "unlock",
+      "t": 62508.9,
+      "el": null
+    },
+    {
+      "type": "mousedown",
+      "t": 63367.5,
+      "locked": false
+    },
+    {
+      "type": "key",
+      "t": 63370.4,
+      "code": "KeyR"
+    },
+    {
+      "type": "mousedown",
+      "t": 64393.9,
+      "locked": false
+    },
+    {
+      "type": "lock",
+      "t": 64461.8,
+      "el": "scene"
+    },
+    {
+      "type": "panel",
+      "t": 64462,
+      "value": null
+    },
+    {
+      "type": "ammo",
+      "t": 64464.1,
+      "value": "12 / 12"
+    }
+  ],
+  "problems": [],
+  "finishedAt": "2026-11-05T23:06:02.503Z"
+}
