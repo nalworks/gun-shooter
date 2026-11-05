@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gun Shooter — 표적 사격장</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <canvas id="scene" aria-label="3D 사격장"></canvas>
+
+  <div id="hud" aria-live="off">
+    <div class="hud-top">
+      <div class="hud-box"><span class="label">점수</span><span id="hud-score">0</span></div>
+      <div class="hud-box"><span class="label">남은 시간</span><span id="hud-time">60.0</span></div>
+    </div>
+    <div class="hud-bottom">
+      <div class="hud-box ammo"><span class="label">탄약</span><span id="hud-ammo">12 / 12</span></div>
+      <div id="hud-status" class="status" role="status"></div>
+      <div id="reload-bar" class="reload-bar" hidden><div id="reload-fill"></div></div>
+    </div>
+  </div>
+
+  <div id="crosshair" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+  <div id="hitmarker" aria-hidden="true"></div>
+
+  <div id="overlay">
+    <section class="panel" id="panel-start">
+      <h1>표적 사격장</h1>
+      <p>60초 동안 최대한 많은 표적을 맞히세요.</p>
+      <ul class="controls">
+        <li><kbd>마우스</kbd> 조준</li>
+        <li><kbd>왼쪽 클릭</kbd> 발사 (한 번에 한 발)</li>
+        <li><kbd>R</kbd> 재장전 (탄창 12발)</li>
+        <li><kbd>Esc</kbd> 일시 정지</li>
+      </ul>
+      <button id="btn-start" type="button">시작</button>
+    </section>
+    <section class="panel" id="panel-pause" hidden>
+      <h2>일시 정지</h2>
+      <p>타이머가 멈췄습니다. 계속하려면 버튼을 누르세요.</p>
+      <button id="btn-resume" type="button">계속하기</button>
+    </section>
+    <section class="panel" id="panel-end" hidden>
+      <h2>라운드 종료</h2>
+      <p class="final">최종 점수 <strong id="final-score">0</strong></p>
+      <p id="final-detail" class="detail"></p>
+      <button id="btn-restart" type="button">다시 시작</button>
+    </section>
+    <p id="overlay-error" class="error" role="alert" hidden></p>
+  </div>
+
+  <script type="module" src="./js/game.mjs"></script>
+</body>
+</html>
